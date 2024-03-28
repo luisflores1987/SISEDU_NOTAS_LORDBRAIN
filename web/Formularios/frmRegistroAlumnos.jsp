@@ -113,7 +113,7 @@
                         <tr>
                             <td>
                                 <h2><label style="text-transform: uppercase" class="bannertext">
-                                        REGISTRO DE ALUMNOS
+                                        Registro De Alumnos
                                     </label></h2>
                             </td>
                         </tr>
