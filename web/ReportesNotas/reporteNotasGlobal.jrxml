@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotasGlobal" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b11b6d83-9156-4b1a-9982-33265790bafb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IDBIMESTRE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDGRADO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	DISTINCT
+	P.sNombreCompleto,
+	A.nId_Alumno		[NIDALUMNO]
+FROM
+	dbo.Persona P
+	INNER JOIN	 dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+	INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+	INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+	INNER JOIN dbo.Bimestre AS B ON B.nIdBimestre = AC.nIdBimestre
+
+WHERE
+	AC.nIdBimestre = $P{IDBIMESTRE}
+	AND
+	G.nIdGrado	= $P{IDGRADO}
+ORDER BY
+	P.sNombreCompleto]]>
+	</queryString>
+	<field name="sNombreCompleto" class="java.lang.String"/>
+	<field name="NIDALUMNO" class="java.lang.Integer"/>
+	<detail>
+		<band height="555" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="399" height="44" uuid="50f8cd51-a8ba-40e2-99c0-b32bdf21dd6f"/>
+				<subreportParameter name="IDALUMNO">
+					<subreportParameterExpression><![CDATA[$F{NIDALUMNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["reporteNotasGrado.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

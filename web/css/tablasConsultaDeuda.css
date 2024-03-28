@@ -1,0 +1,136 @@
+.table-titleCONSULTA h3 {
+    color: #fafafa;
+    font-size: 10px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Arial", serif;
+    /*font-family: "Roboto", helvetica, arial, sans-serif;*/
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+}
+
+.table-fillCONSULTA {
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    /*height: 320px;
+    margin: auto;
+    max-width: 600px;*/
+    padding:10px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+    /*    padding-left: 6px;
+        margin-left: 0px;
+        margin-right: 60px;*/
+}
+
+.table-fillCONSULTA th {
+    color:#000000;
+    background:#7C97E8;
+    border-bottom:0px solid #000000;
+    border-right: 1px solid #000000;
+    font-size:13px;
+    font-weight: 100;
+    /*width: 1000px;*/
+    /*padding:24px;*/
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 80px;
+}
+#tdAlumno{
+
+}
+
+.table-fillCONSULTA th:first-child {
+    border-top-left-radius:3px;
+}
+
+.table-fillCONSULTA th:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+}
+
+.table-fillCONSULTA tr {
+    border-top: 1px solid #000000;
+    border-bottom-: 1px solid #000000;
+    color:#000000;
+    font-size:10px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+.table-fillCONSULTA tr:hover td {
+    background: #D9E2FB;
+}
+
+.table-fillCONSULTA tr:first-child {
+    border-top:none;
+}
+
+.table-fillCONSULTA tr:last-child {
+    border-bottom:none;
+}
+
+.table-fillCONSULTA tr:last-child td:first-child {
+    border-bottom-left-radius:3px;
+}
+
+.table-fillCONSULTA tr:last-child td:last-child {
+    border-bottom-right-radius:3px;
+}
+
+.table-fillCONSULTA td {
+    background:#FFFFFF;
+    /*padding:20px;*/
+    vertical-align:middle;
+    font-weight:100;
+    font-size:10px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+    font-family: "Arial", serif;
+    /*    width: 80px;*/
+}
+
+.table-fillCONSULTA th.text-left {
+    text-align: center;
+}
+
+.table-fillCONSULTA td.text-left {
+    text-align: left;
+}
+
+.table-fillCONSULTA td.text-right {
+    text-align: center;
+}
+
+.table-fillCONSULTA th.text-right {
+    text-align: center;
+}
+
+.post{
+    width: 50%;
+    float:left;
+}
+
+#botoneraDeuda{
+    width: 50%;
+    float:left;
+}
+
+.datosTablaPension{
+    display: none;
+}
+
+#content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+div#divTablaConsultaDeuda {
+    width: 100%;
+    margin: 0 auto;    
+}

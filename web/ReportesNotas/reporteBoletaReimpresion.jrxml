@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" printOrder="Horizontal" pageWidth="453" pageHeight="297" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="453" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d0eaf819-eef5-4e91-a5bb-b1e3ef636fdf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nIdAlumno" class="java.lang.String">
+		<defaultValueExpression><![CDATA["313"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sNumeroRecibo" class="java.lang.String">
+		<defaultValueExpression><![CDATA["5"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     boleta.[sNumeroRecibo],
+     CONVERT(varchar(10),boleta.[dFechaCreacion],103) AS [dFechaCreacion],
+     persona.[sNombreCompleto],
+     SUBSTRING(nivel.[sDescripcion],1,3) AS Nivel,
+     grado.[sDescripcion] AS Grado,
+     deuda.[sDescripcion]  + space(2) + alumno.sAñoAcademico AS [sDescripcion],
+     CAST(boleta.[sMonto] AS DECIMAL(6,2)) AS nMonto,
+     0.00 AS nMora
+FROM
+     "ALUMNO" alumno INNER JOIN "PERSONA" persona ON alumno."nId_Persona" = persona."nId_persona"
+     INNER JOIN "NIVEL" nivel ON alumno."nIdNivel" = nivel."nIdNivel" 
+     INNER JOIN "GRADO" grado ON alumno."nIdGrado" = grado."nIdGrado"
+     INNER JOIN "ALUMNO_DEUDA" alumno_deuda ON alumno."nId_Alumno" = alumno_deuda."nId_Alumno"
+     INNER JOIN "DEUDA" deuda ON alumno_deuda."nIdDeuda" = deuda."nIdDeuda"
+     INNER JOIN "BOLETA" boleta ON alumno_deuda."nIdAlumnoDeuda" = boleta."nIdAlumnoDeuda"
+WHERE
+	deuda.nIdDeuda = $P{sNumeroRecibo}
+AND
+	alumno.nId_Alumno = $P{nIdAlumno}]]>
+	</queryString>
+	<field name="sNumeroRecibo" class="java.lang.String"/>
+	<field name="dFechaCreacion" class="java.lang.String"/>
+	<field name="sNombreCompleto" class="java.lang.String"/>
+	<field name="Nivel" class="java.lang.String"/>
+	<field name="Grado" class="java.lang.String"/>
+	<field name="sDescripcion" class="java.lang.String"/>
+	<field name="nMonto" class="java.math.BigDecimal"/>
+	<field name="nMora" class="java.math.BigDecimal"/>
+	<variable name="total" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="sDescripcion_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{sDescripcion}]]></variableExpression>
+	</variable>
+	<variable name="nMonto_1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{nMonto}]]></variableExpression>
+	</variable>
+	<variable name="nMora_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupoRecibo" calculation="Sum">
+		<variableExpression><![CDATA[$F{nMora}]]></variableExpression>
+	</variable>
+	<variable name="Total" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{nMonto_1}.add($V{nMora_1})]]></variableExpression>
+	</variable>
+	<group name="grupoRecibo">
+		<groupExpression><![CDATA[$F{sNumeroRecibo}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<textField>
+					<reportElement x="375" y="-10" width="68" height="20" uuid="8c97a25c-9694-4243-b0c5-d751369ef6aa"/>
+					<textElement>
+						<font fontName="Consolas" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sNumeroRecibo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="345" y="19" width="114" height="15" uuid="60a33353-9dfb-45ab-ac8a-7bd8aec6621e"/>
+					<textElement>
+						<font fontName="Consolas" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dFechaCreacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="74" y="-1" width="269" height="20" uuid="1b46afd5-e31d-451f-b5fc-8f49db098e6e"/>
+					<textElement>
+						<font fontName="Consolas" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sNombreCompleto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="287" y="18" width="37" height="20" uuid="a2e8b940-a355-4d8f-805d-12a86e9286c7"/>
+					<textElement>
+						<font fontName="Consolas" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Nivel}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="277" y="18" width="10" height="20" uuid="e9b7a165-557d-480e-94b5-129e6e82d5e7"/>
+					<textElement>
+						<font fontName="Consolas" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Grado}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="33"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="85"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="91" y="0" width="100" height="15" uuid="856a58dc-0600-4565-b084-0801802a2be6"/>
+				<textElement>
+					<font fontName="Consolas" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sDescripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="0" width="48" height="15" uuid="90066d0b-bd8c-433f-aaab-69ba5b5f14c3"/>
+				<textElement>
+					<font fontName="Consolas" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nMonto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<textField>
+				<reportElement x="401" y="58" width="45" height="15" uuid="bbc9900b-14c8-43d5-a059-71ab089b2b45"/>
+				<textElement>
+					<font fontName="Consolas" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

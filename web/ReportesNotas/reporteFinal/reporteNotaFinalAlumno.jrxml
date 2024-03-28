@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotasInicial" pageWidth="421" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="395" leftMargin="13" rightMargin="13" topMargin="13" bottomMargin="13" uuid="c26fb989-4324-45ae-99a9-8a17c260bd7d">
+	<property name="ireport.zoom" value="1.3995221406291998"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TH" mode="Opaque" backcolor="#FFF8DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_CH" mode="Opaque" backcolor="#FFF2BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 16">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_TH" mode="Opaque" backcolor="#F0FFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_CH" mode="Opaque" backcolor="#BFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 24">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 24_TH" mode="Opaque" backcolor="#FFFAF0">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 24_CH" mode="Opaque" backcolor="#FFEABF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 24_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 25">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 25_TH" mode="Opaque" backcolor="#FFE4C4">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 25_CH" mode="Opaque" backcolor="#FFE2BF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 25_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 26">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 26_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 26_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 26_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 27">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 27_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 27_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 27_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="0d549c8e-9b59-41a0-9aaa-e14ab606928d"/>
+	<subDataset name="Table Dataset 2" uuid="21355049-0621-4de9-9962-297b11fc9f36"/>
+	<subDataset name="Table Dataset 3" uuid="9e04b3c4-07a0-4612-b4c4-ba8051ad9fbc"/>
+	<subDataset name="Table Dataset 4" uuid="d722eff7-ffaf-4fae-8160-a1d553270f1f"/>
+	<subDataset name="Table Dataset 5" uuid="70c5a61e-6d98-4c73-8447-10a7b415e8ab"/>
+	<subDataset name="Table Dataset 6" uuid="de059977-75fe-4648-aee5-fdccf89789b7"/>
+	<subDataset name="Table Dataset 7" uuid="006efc68-866d-4b8a-bda3-7c49b123fff2"/>
+	<subDataset name="Table Dataset 8" uuid="da09ead2-1520-43eb-bdbf-087e7173f802"/>
+	<subDataset name="Table Dataset 9" uuid="f552feda-c7c9-4829-a886-eafbc46a34e7"/>
+	<subDataset name="Table Dataset 10" uuid="286231d1-0fd8-4f23-b278-6fb0661f51a0"/>
+	<subDataset name="Table Dataset 11" uuid="22fe0cd1-a0b1-4d4f-955a-1438761e9455"/>
+	<subDataset name="Table Dataset 12" uuid="f4152604-3c11-4e58-ab63-eb7b84e695c4"/>
+	<subDataset name="New Dataset 1" uuid="be96d447-90cd-4844-8eb7-55821f6964b8">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+	[NIDALUMNO],
+	[NOMBRE COMPLETO],
+	[NIVEL],
+	[GRADO],
+	[AREA],
+	[CURSO],
+	[IDBIMESTRE],
+	[1] AS	[NOTA 1],
+	[2]	AS	[NOTA 2]
+FROM
+(
+SELECT
+	A.nId_Alumno		[NIDALUMNO],
+	P.sNombreCompleto	[NOMBRE COMPLETO],
+	N.sDescripcion		[NIVEL],
+	G.sDescripcion		[GRADO],
+	A2.sDescripcion		[AREA],
+	C.sDescripcion		[CURSO],
+	AC.sNota			[NOTAS],
+	AC.nIdTipoNota		[TIPONOTA],
+	AC.nIdBimestre		[IDBIMESTRE]
+FROM
+	dbo.Persona AS P
+	INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+	INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+	INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+	INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+	INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+	INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+) A
+PIVOT
+(
+	MAX(NOTAS) FOR TIPONOTA IN ([1], [2])
+) PVTNOTAS]]>
+		</queryString>
+		<field name="AREA" class="java.lang.String"/>
+		<field name="CURSO" class="java.lang.String"/>
+		<field name="NOTA 1" class="java.lang.String"/>
+		<field name="NOTA 2" class="java.lang.String"/>
+		<group name="AREA">
+			<groupExpression><![CDATA[$F{AREA}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Table Dataset 13" uuid="9c483d61-3655-46f5-8daf-00a6999620d2"/>
+	<subDataset name="Table Dataset 14" uuid="a932b74e-e0ec-4f91-91e4-091a1bb7392e"/>
+	<subDataset name="Table Dataset 15" uuid="b7a648d5-9ef2-46b1-a823-3ffe1e8a903b"/>
+	<subDataset name="Table Dataset 16" uuid="9ade0fd5-16c2-4735-870e-2c265a60b5ef"/>
+	<subDataset name="Table Dataset 17" uuid="2beebb05-13bf-457c-805a-ecfdaed80b8b"/>
+	<subDataset name="Table Dataset 18" uuid="7f42c63c-5444-43dd-8ed6-21025656934d"/>
+	<subDataset name="Comportamiento" uuid="35b3644a-982e-49d8-bd7d-10c1f3198b6b">
+		<parameter name="IDALUMNO" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="IDBIMESTRE" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+	DISTINCT
+	A.nId_Alumno		[NIDALUMNO],
+	P.sNombreCompleto	[NOMBRE COMPLETO],
+	N.sDescripcion		[NIVEL],
+	G.nIdGrado			[IDGRADO],
+	G.sDescripcion		[GRADO],
+	AC.nIdBimestre		[IDBIMESTRE],
+	B.sDescripcion		[BIMESTRE],
+	A.sSeccion			[SECCION],
+	ISNULL(NC.Nota, '')		[NOTA CONDUCTA],
+	ISNULL(NC.Sugerencias, '')	[SUGERENCIAS],
+						ISNULL(OL.[sTardanzas],			 '') [sTardanzas],
+						ISNULL(OL.[sInasJustificadas],	 '') [sInasJustificadas],
+						ISNULL(OL.[sInasInjustificadas], '') [sInasInjustificadas],
+						ISNULL(OL.[nIdParticipacionPPFF],'') [nIdParticipacionPPFF]
+FROM
+	dbo.Persona AS P
+	INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+	INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+	INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+	INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+	INNER JOIN dbo.Bimestre AS B ON B.nIdBimestre = AC.nIdBimestre
+	INNER JOIN NotaComportamiento AS NC ON NC.nIdAlumno = A.nId_Alumno
+	LEFT JOIN Otros_Libreta	AS OL	ON	OL.nId_Alumno = A.nId_Alumno
+WHERE
+	AC.nId_Alumno = $P{IDALUMNO}
+	AND
+	B.nIdBimestre = 4
+	AND
+	NC.nIdBimestre = 4
+	AND
+	OL.nIdBimestre = 4]]>
+		</queryString>
+		<field name="NIDALUMNO" class="java.lang.Integer"/>
+		<field name="NOMBRE COMPLETO" class="java.lang.String"/>
+		<field name="NIVEL" class="java.lang.String"/>
+		<field name="IDGRADO" class="java.lang.Integer"/>
+		<field name="GRADO" class="java.lang.String"/>
+		<field name="IDBIMESTRE" class="java.lang.Integer"/>
+		<field name="BIMESTRE" class="java.lang.String"/>
+		<field name="SECCION" class="java.lang.String"/>
+		<field name="NOTA CONDUCTA" class="java.lang.String"/>
+		<field name="SUGERENCIAS" class="java.lang.String"/>
+		<field name="sTardanzas" class="java.lang.String"/>
+		<field name="sInasJustificadas" class="java.lang.String"/>
+		<field name="sInasInjustificadas" class="java.lang.String"/>
+		<field name="nIdParticipacionPPFF" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="PROMEDIOGLOBAL" uuid="35ec9e2b-1cb6-4f87-92ae-963649fbfeaa">
+		<parameter name="idAlumno" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[29]]></defaultValueExpression>
+		</parameter>
+		<parameter name="idGrado" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+		</parameter>
+		<parameter name="sSeccion" class="java.lang.String">
+			<defaultValueExpression><![CDATA['A']]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+						B.PUNTAJE,
+						B.PROMEDIO,
+						'' AS CONDUCTA,
+						B.PUESTO
+					FROM
+					(
+					SELECT
+						C.IDALUMNO,
+						C.NOMBRE,
+						ROW_NUMBER() OVER(ORDER BY SUM(ROUND(CONVERT(FLOAT, C.[NOTAS]),2,0)) DESC)	[PUESTO],
+						SUM(C.[NOTAS]) [PUNTAJE],
+						AVG(CAST(C.[NOTAS] AS FLOAT)) [PROMEDIO],
+						C.SECCION
+					FROM
+					(
+							SELECT
+								IDALUMNO,
+								IDAREA,
+								CURSO,
+								CAST(ROUND((CAST([1] AS FLOAT) + CAST([2] AS FLOAT)+ CAST([3] AS FLOAT) + CAST([4] AS FLOAT))/4,0,0) AS INT) [NOTAS],
+								NOMBRE,
+								SECCION
+							FROM
+							
+							(
+							SELECT
+								A.IDAREA,
+								A.CURSO,
+								A.BIMESTRE,
+								A.NOTAS,
+								A.IDALUMNO,
+								A.NOMBRE,
+								A.SECCION
+							FROM
+								[dbo].[fnTablaPruebaPromedio]($P{idGrado}, $P{sSeccion}) A 
+							) A
+							PIVOT
+							(
+								MAX(A.NOTAS) FOR A.BIMESTRE IN ([1],[2],[3],[4])
+							) AS PVTNOTAS
+					) C
+					GROUP BY
+						C.NOMBRE,
+						C.IDALUMNO,
+						C.SECCION
+					) B
+	WHERE
+		B.IDALUMNO = $P{idAlumno}
+	ORDER BY
+		B.NOMBRE]]>
+		</queryString>
+		<field name="PUNTAJE" class="java.lang.Integer"/>
+		<field name="PROMEDIO" class="java.lang.Double"/>
+		<field name="CONDUCTA" class="java.lang.String"/>
+		<field name="PUESTO" class="java.lang.Long"/>
+	</subDataset>
+	<subDataset name="New Dataset 2" uuid="25725f92-0cee-457f-970a-63beb6e2a102"/>
+	<subDataset name="SituacionFinal" uuid="5f8421e6-292d-4bb3-a6af-0aab9619e928">
+		<parameter name="idAlumno" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[88]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+	IDALUMNO,
+	REPITE = CASE WHEN IDNIVEL = 2 THEN
+					CASE WHEN SUM(SESTADO) = 2	THEN
+						'1'
+					ELSE
+						'0'
+					END
+			     WHEN IDNIVEL = 3 THEN
+					CASE WHEN SUM(SESTADO) > 3 THEN
+						'1'
+					ELSE
+						'0'
+					END
+			 ELSE
+				'0'
+			 END,
+	PROMOVIDO = CASE WHEN IDNIVEL = 2 OR IDNIVEL = 3 THEN
+					CASE WHEN SUM(SESTADO) = 0 	THEN
+						'1'
+					ELSE
+						'0'
+					END
+					WHEN IDNIVEL = 1 THEN
+						'1'
+				ELSE
+					'0'
+				END
+FROM
+	fnTablaPruebaFinalTotal ($P{idAlumno})
+GROUP BY
+	IDALUMNO, IDNIVEL]]>
+		</queryString>
+		<field name="IDALUMNO" class="java.lang.Integer"/>
+		<field name="REPITE" class="java.lang.String"/>
+		<field name="PROMOVIDO" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="IDALUMNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[365]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	DISTINCT
+	[NIDALUMNO],
+	[NOMBRE COMPLETO],
+	CAST([IDNIVEL] AS VARCHAR(2)) [IDNIVEL],
+	[NIVEL],
+	[IDGRADO],
+	[GRADO],
+	[SECCION]
+FROM
+(
+SELECT
+	A.nId_Alumno		[NIDALUMNO],
+	P.sNombreCompleto		[NOMBRE COMPLETO],
+	N.nIdNivel			[idNivel],
+	N.sDescripcion		[NIVEL],
+	G.nIdGrado			[IDGRADO],
+	G.sDescripcion		[GRADO],
+	A2.nIDArea			[IDAREA],
+	A2.sDescripcion		[AREA],
+	C.sDescripcion		[CURSO],
+	AC.sNota			[NOTAS],
+	AC.nIdTipoNota		[TIPONOTA],
+	A.sSeccion			[SECCION]
+FROM
+	dbo.Persona AS P
+	INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona AND A.sEstado = 1 AND P.sEstado = 1
+	INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+	INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+	INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+	INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+	INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea AND A2.sEstado = 1
+) A
+PIVOT
+(
+	MAX(NOTAS) FOR TIPONOTA IN ([1], [2])
+) PVTNOTAS
+
+WHERE
+	[NIDALUMNO] = $P{IDALUMNO}
+ORDER BY
+	[NOMBRE COMPLETO]]]>
+	</queryString>
+	<field name="NIDALUMNO" class="java.lang.Integer"/>
+	<field name="NOMBRE COMPLETO" class="java.lang.String"/>
+	<field name="IDNIVEL" class="java.lang.String"/>
+	<field name="NIVEL" class="java.lang.String"/>
+	<field name="IDGRADO" class="java.lang.Integer"/>
+	<field name="GRADO" class="java.lang.String"/>
+	<field name="SECCION" class="java.lang.String"/>
+	<group name="ALUMNO">
+		<groupExpression><![CDATA[$F{NIDALUMNO}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<staticText>
+					<reportElement x="0" y="0" width="114" height="20" forecolor="#A60705" uuid="1693f090-26f9-47bf-b8c2-2502a906ecac"/>
+					<textElement>
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apellidos y Nombres:
+
+                    ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="14" width="34" height="16" forecolor="#A60705" uuid="b3b83854-dda9-4a0e-93b0-15cab8d26c8f"/>
+					<textElement>
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nivel :
+
+                    ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="109" y="14" width="34" height="16" forecolor="#A60705" uuid="71427951-1b1f-4b96-877b-b06dcb14569f"/>
+					<textElement>
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Grado:
+
+                    ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="171" y="14" width="47" height="16" forecolor="#A60705" uuid="f85f6043-c4e9-4e7c-9828-25459c835c4e"/>
+					<textElement>
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sección:
+
+                    ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="115" y="0" width="177" height="14" forecolor="#A60705" uuid="c7cd011f-9daa-4364-8174-bb1c0372b016"/>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMBRE COMPLETO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="36" y="14" width="66" height="16" forecolor="#A60705" uuid="618c2a6c-aa8e-49d4-9ae7-9001c7a7288e"/>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NIVEL}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="143" y="14" width="19" height="16" forecolor="#A60705" uuid="c41b84aa-adb0-471e-a675-7097d1881fe6"/>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{GRADO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="218" y="14" width="34" height="16" forecolor="#A60705" uuid="1ea08861-a6aa-4901-8253-f5b2c80b2b16"/>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SECCION}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="87">
+			<textField>
+				<reportElement x="0" y="67" width="395" height="20" forecolor="#1504C4" uuid="48c6fe05-8d2d-4e20-acee-b4a5ca25af7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LIBRETA DE NOTAS - 2016"]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="395" height="67" uuid="e4c272dc-2d26-4e5b-8704-9ca0191fc848">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["C:\\Apiservi\\IMAGEN\\SISEDU_NOTAS\\Cabecera_inicial.jpg"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" isUsingCache="false" isLazy="true">
+				<reportElement x="0" y="0" width="395" height="67" uuid="43644507-54c1-4d38-8457-f8f5b66e3e32">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.equals("2") || $F{IDNIVEL}.equals("3")]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["C:\\Apiservi\\IMAGEN\\SISEDU_NOTAS\\Cabecera.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="332">
+			<subreport isUsingCache="true">
+				<reportElement x="1" y="0" width="218" height="68" uuid="0bfd67dd-a8fe-42a8-80aa-b3ebb9d717b8"/>
+				<subreportParameter name="IDALUMNO">
+					<subreportParameterExpression><![CDATA[$F{NIDALUMNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["reporteNotaFinalInicial_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+			<componentElement>
+				<reportElement key="table 22" style="table 22" positionType="Float" x="1" y="78" width="275" height="53" uuid="1cb1802f-661c-40b5-9060-98b49cfa399c">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.equals("1") || $F{IDNIVEL}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Comportamiento" uuid="52cc35c3-2b4d-4ec1-95ec-4a0ad8c1d355">
+						<datasetParameter name="IDALUMNO">
+							<datasetParameterExpression><![CDATA[$F{NIDALUMNO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="275" uuid="91ae7879-e490-481b-b7a3-92ba6dd2fefd">
+						<jr:tableFooter height="43" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="275" height="43" uuid="143779b8-85cb-4460-88c7-fd56306e4536"/>
+								<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{SUGERENCIAS}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell style="table 22_TD" height="10" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="275" height="10" uuid="7f54665e-3552-42cc-ac39-fe9c1ca3db26"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[SUGERENCIAS Y RECOMENDACIONES
+
+                                ]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 8" style="table 8" positionType="Float" x="286" y="178" width="109" height="60" uuid="a5b9246a-72a5-440f-8642-ada365456240"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Comportamiento" uuid="9f4566ae-36d9-4372-b215-d79257e3bc71">
+						<datasetParameter name="IDALUMNO">
+							<datasetParameterExpression><![CDATA[$F{NIDALUMNO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="109" uuid="980fc076-064c-455f-8c16-95dcdec6dbdd">
+						<jr:tableHeader height="19" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="19" uuid="db510303-9c1d-4c87-9db2-da21d16bc115"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Participación PP.FF.
+
+                                ]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 8_TD" height="61" rowSpan="1">
+							<staticText>
+								<reportElement x="19" y="5" width="36" height="10" uuid="98e95075-fc60-40f7-b93a-de5f8a21d9f1"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Excelente:
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="19" y="15" width="36" height="10" uuid="594e6f80-c18d-45ed-9d9a-05c8eb86a6ed"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Muy Bueno:
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="19" y="25" width="36" height="10" uuid="1fb849a3-8bd5-4dd5-bbc5-64974db28ef5"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Bueno:
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="19" y="35" width="36" height="10" uuid="47fce541-378e-4d24-b0f8-f653dd43ff6b"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Regular:
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="19" y="45" width="36" height="10" uuid="8a9b4a3f-4b8b-42af-9248-a10b4f75c782"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Malo:
+
+                                ]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="70" y="5" width="19" height="10" uuid="294bb27d-b6e9-4f0c-a98c-42118fa8c53b"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[( $F{nIdParticipacionPPFF} == 1 ? "X" : "" )]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="70" y="15" width="19" height="10" uuid="d39de3d6-8c11-4967-98f0-150eb05e7be8"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[( $F{nIdParticipacionPPFF} == 2 ? "X" : "" )]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="70" y="25" width="19" height="10" uuid="80fe8cd9-660d-4995-9497-6a057d85d95e"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[( $F{nIdParticipacionPPFF} == 3 ? "X" : "" )]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="70" y="35" width="19" height="10" uuid="b5267076-6a1c-42c6-ae50-ccc326d45983"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[( $F{nIdParticipacionPPFF} == 4 ? "X" : "" )]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="70" y="45" width="19" height="10" uuid="1f63ae59-87dc-48d6-a454-620f04d57cad"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[( $F{nIdParticipacionPPFF} == 5 ? "X" : "" )]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 8" style="table 8" positionType="Float" x="286" y="244" width="109" height="50" uuid="eeacd7d9-adcf-47fd-952d-a419e5f124f7">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.toString().equals("1")]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 11" uuid="617e34e4-81a7-40ff-9a1f-e9d279bff609">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="109" uuid="bc28539c-2ac5-441b-b9ee-05135af26994">
+						<jr:tableHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="20" uuid="b9ae277b-b74a-4d2f-befa-86e56cac107a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Escala Valorativa
+
+                                ]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 8_TD" height="28" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="10" uuid="07f48c2b-af21-4501-a3b1-e9fea701e723"/>
+								<box leftPadding="10"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<text><![CDATA[ A   (13-20)  Logro Previsto
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="9" width="109" height="10" uuid="6f75e0df-19ca-47d2-b809-22f6e179cf48"/>
+								<box leftPadding="10"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<text><![CDATA[ B   (11-12)  En proceso
+
+                                ]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="18" width="109" height="10" uuid="6b142c2e-700a-4918-ae0d-2c9479be53c7"/>
+								<box leftPadding="10"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<text><![CDATA[ C   (00-10)  En Inicio
+
+                                ]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 8" style="table 8" positionType="Float" x="286" y="244" width="109" height="50" uuid="d75c5ae9-8cd4-4c8a-afb4-3fdcb9db4fe8">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.toString().equals("2")]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 11" uuid="35e31aa3-7d39-44ce-9b5c-5b4579486fa5">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="109" uuid="6dead676-5ad0-4b83-90e8-efe72e09829b">
+						<jr:tableHeader height="19" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="19" uuid="06d33e21-3ffa-4434-8c79-e643480d5533"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Escala Valorativa]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 8_TD" height="41" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="10" uuid="336c56b9-8131-42d1-876d-0e5adb3a8070"/>
+								<box leftPadding="0"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<text><![CDATA[ AD  (17-20)  Logro Destacado	]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="10" width="109" height="10" uuid="4008b2dc-3975-46e0-bdb2-423972539e0b"/>
+								<box leftPadding="0"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<text><![CDATA[ A     (13-16)  Logro Previsto]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="20" width="109" height="10" uuid="d30a678e-5ec9-4386-a6f5-caf203d479b3"/>
+								<box leftPadding="0"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<text><![CDATA[ B     (11-12)  En Proceso]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="30" width="109" height="10" uuid="ec34cce8-0715-4552-9004-383224a2d855"/>
+								<box leftPadding="0"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<text><![CDATA[ C     (00-10)  En Inicio]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 27" style="table 27" positionType="Float" x="286" y="11" width="109" height="25" uuid="4d3ef005-7937-4574-9fa6-ea1305023251"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="PROMEDIOGLOBAL" uuid="8ab59976-1266-4462-9165-ba2e539d096b">
+						<datasetParameter name="idAlumno">
+							<datasetParameterExpression><![CDATA[$F{NIDALUMNO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="idGrado">
+							<datasetParameterExpression><![CDATA[$F{IDGRADO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="sSeccion">
+							<datasetParameterExpression><![CDATA[$F{SECCION}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="54" uuid="4dd9a481-da68-41af-be9a-5ac3a371f4f4">
+						<jr:detailCell style="table 27_TD" height="25" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="54" height="25" uuid="e95d46fc-48a0-493d-b593-d5b0780ad03b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Orden de Merito]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="54" uuid="e151e25b-4296-42b6-9e2b-a9a986d56f18">
+						<jr:detailCell style="table 27_TD" height="25" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="54" height="25" uuid="f8a1f6c5-123e-4c48-8502-c78818b93050"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PUESTO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<frame>
+				<reportElement positionType="Float" x="286" y="42" width="109" height="64" uuid="ede9072e-81b8-4b59-bf2a-eb02467ac7c5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<subreport>
+					<reportElement x="0" y="0" width="95" height="58" uuid="238692ef-ad07-4b9c-9f24-1e479626c624"/>
+					<subreportParameter name="IdAlumno">
+						<subreportParameterExpression><![CDATA[$F{NIDALUMNO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["reporteNotaFinalAsistenciaInicial_subreport1.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<componentElement>
+				<reportElement key="table 22" style="table 22" positionType="Float" x="0" y="78" width="259" height="53" uuid="00369b05-89b4-45f6-bbd7-34fa25430859">
+					<printWhenExpression><![CDATA[$F{IDNIVEL}.equals("3")]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Comportamiento" uuid="ab37243b-a64b-43d5-9c18-1189d5ce56e8">
+						<datasetParameter name="IDALUMNO">
+							<datasetParameterExpression><![CDATA[$F{NIDALUMNO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="259" uuid="968d4c76-1596-449c-9216-5489f669d94c">
+						<jr:tableFooter height="43" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="259" height="43" uuid="4740da25-5f0e-4f55-b206-f3f3d6652027"/>
+								<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="6"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{SUGERENCIAS}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell style="table 22_TD" height="10" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="259" height="10" uuid="e96354bf-20e4-4593-90e1-45414fff70ab"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[SUGERENCIAS Y RECOMENDACIONES
+
+                                ]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 8" style="table 8" positionType="Float" x="286" y="112" width="109" height="60" uuid="28cff061-d44a-4179-9446-1d1c6bcf4478"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="SituacionFinal" uuid="f4703016-ca0e-4886-8003-30c5a02fc527">
+						<datasetParameter name="idAlumno">
+							<datasetParameterExpression><![CDATA[$F{NIDALUMNO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="109" uuid="7cbbb8fb-2060-4dab-87d0-4a1becf3e95c">
+						<jr:tableHeader height="19" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="19" uuid="5ddc36de-f7a6-44cb-b6e2-257ca8b8baf8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[Situación Final]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 8_TD" height="42" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="4" width="88" height="10" uuid="2f923851-14ca-4e2c-9b7d-b11b6ae7bfec"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Promovido]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="14" width="88" height="10" uuid="d5a89668-21ba-4114-a65d-68e10ce17242"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Requiere Recuperación]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="0" y="24" width="88" height="10" uuid="13e646e9-a690-4670-ac5d-d372386ef06e"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" size="7" isBold="false"/>
+								</textElement>
+								<text><![CDATA[Repite Grado]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="88" y="5" width="18" height="10" uuid="bd6365d1-23b9-4f86-be74-b2319dcf5261"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[" ".toString()]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="88" y="15" width="18" height="10" uuid="69d90a02-429b-485e-bbb9-82876728e8d8"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[" ".toString()]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="88" y="25" width="18" height="10" uuid="e6c0298a-922a-4a99-8cf4-308f7613c883"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[" ".toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="71">
+			<line>
+				<reportElement x="53" y="52" width="79" height="1" uuid="e4c6e0bb-53f1-4aee-9fa3-cff3e5a21830"/>
+			</line>
+			<line>
+				<reportElement x="232" y="51" width="91" height="1" uuid="1588f41c-4051-4c8d-80b5-af9892ef5e89"/>
+			</line>
+			<staticText>
+				<reportElement x="231" y="50" width="91" height="20" uuid="001209a8-4a89-48d0-af30-b891b7ae0913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Director(a)
+
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="50" width="85" height="20" uuid="f619cf0a-22d0-49e4-8503-6a90b033abb9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Profesor(a)
+
+                ]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="231" y="10" width="91" height="40" uuid="64218b08-8502-49de-98df-4d6f6b71c498"/>
+				<image scaleImage="FillFrame">
+					<reportElement x="1" y="0" width="90" height="40" uuid="fb08372b-27b3-4154-b996-ec8a58b2e369"/>
+					<imageExpression><![CDATA["C:\\Apiservi\\IMAGEN\\SISEDU_NOTAS\\FIRMA.jpg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

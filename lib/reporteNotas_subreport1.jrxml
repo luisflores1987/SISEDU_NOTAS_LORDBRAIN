@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotas_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="80bd5514-9ff1-47b6-bf4d-566ef1f3f8b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IDALUMNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDBIMESTRE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	[NIDALUMNO],
+	[NOMBRE COMPLETO],
+	[NIVEL],
+	[GRADO],
+	[AREA],
+	[CURSO],
+	[IDBIMESTRE],
+	[1] AS	[NOTA 1],
+	[2]	AS	[NOTA 2]
+FROM
+(
+SELECT
+	A.nId_Alumno		[NIDALUMNO],
+	P.sNombreCompleto	[NOMBRE COMPLETO],
+	N.sDescripcion		[NIVEL],
+	G.sDescripcion		[GRADO],
+	A2.sDescripcion		[AREA],
+	C.sDescripcion		[CURSO],
+	AC.sNota			[NOTAS],
+	AC.nIdTipoNota		[TIPONOTA],
+	AC.nIdBimestre		[IDBIMESTRE]
+FROM
+	dbo.Persona AS P
+	INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+	INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+	INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+	INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+	INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+	INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+) A
+PIVOT
+(
+	MAX(NOTAS) FOR TIPONOTA IN ([1], [2])
+) PVTNOTAS
+WHERE
+	[NIDALUMNO] = $P{IDALUMNO}
+	AND
+	[IDBIMESTRE] = $P{IDBIMESTRE}]]>
+	</queryString>
+	<field name="NIDALUMNO" class="java.lang.Integer"/>
+	<field name="NOMBRE COMPLETO" class="java.lang.String"/>
+	<field name="NIVEL" class="java.lang.String"/>
+	<field name="GRADO" class="java.lang.String"/>
+	<field name="AREA" class="java.lang.String"/>
+	<field name="CURSO" class="java.lang.String"/>
+	<field name="IDBIMESTRE" class="java.lang.Integer"/>
+	<field name="NOTA 1" class="java.lang.String"/>
+	<field name="NOTA 2" class="java.lang.String"/>
+	<group name="AREA">
+		<groupExpression><![CDATA[$F{AREA}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<textField>
+					<reportElement x="10" y="5" width="100" height="20" uuid="2405212d-628c-495a-83c7-56a88fbc8613"/>
+					<textFieldExpression><![CDATA[$F{AREA}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="22"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="8334f15b-fe97-4e50-8645-57905bb4bdec"/>
+				<text><![CDATA[AREA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="100" height="20" uuid="f8119bd3-29cd-4d14-af89-f71b7da1361d"/>
+				<text><![CDATA[CURSO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="2" width="100" height="20" uuid="7ba1ad2c-bf0a-40bf-a261-7ed0897a8dba"/>
+				<text><![CDATA[NOTA 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="2" width="100" height="20" uuid="30174c02-bc31-4cf8-a7fe-676d3d27b73a"/>
+				<text><![CDATA[NOTA 2]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="291" y="5" width="100" height="20" uuid="be906301-566e-410e-b719-3017b768189f"/>
+				<textFieldExpression><![CDATA[$F{NOTA 1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="5" width="100" height="20" uuid="17101e00-ae6d-4b3d-818f-91cbc899ca42"/>
+				<textFieldExpression><![CDATA[$F{CURSO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="5" width="100" height="20" uuid="f9873ff3-a74d-451d-9d42-e05624280841"/>
+				<textFieldExpression><![CDATA[$F{NOTA 2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

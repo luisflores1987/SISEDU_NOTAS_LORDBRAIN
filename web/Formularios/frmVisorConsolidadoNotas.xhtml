@@ -1,0 +1,176 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"      
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:sql="http://java.sun.com/jsp/jstl/sql"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+  <div style="width:1500px;">
+    <c:forEach  var = "area" items="#{lstArea}" varStatus="index">
+        <p>la longitud de del listado es : #{fn:length(area)}</p>
+        <c:set var="contador" value="#{100/fn:length(area)}"/>
+        <div id="divConsolidadoNotas" style="width:#{contador}%;float:left;">
+            <sql:query var="result" scope="page" dataSource="jdbc/SiseduDesarrolloNotas">
+                declare 
+                @attr varchar(max),
+                @columnas varchar(max),
+                @suma varchar(max),
+                @cantidad varchar(max),
+                @sql varchar(max),
+                @idalumno varchar(5),
+                @idbimestre	varchar(5),
+                @idarea varchar(5)
+
+                set @idalumno = 4
+                set @idbimestre = 1
+                set @idarea = 2
+                set @attr=''
+                set @columnas=''
+                SET @suma =''
+                SET @cantidad =''
+                set 
+                @sql='
+                select 
+                [NIDALUMNO],
+                #columnas#,
+                ROUND(CAST(#suma# AS FLOAT)/CAST(#cantidad# AS FLOAT),0,0)[Promedio]
+                from
+                (
+                SELECT
+                A.nId_Alumno		[NIDALUMNO],
+                C.sDescripcion		[CURSO],
+                CONVERT(FLOAT,AC.sNota) [NOTAS],
+                AC.nIdBimestre		[IDBIMESTRE],
+                A2.nIdArea			[IDAREA],
+                G.nIdGrado			[IDGRADO]
+                FROM
+                dbo.Persona AS P
+                INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+                INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+                INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+                INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+                INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+                INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+                )A pivot(
+                AVG(NOTAS) FOR [CURSO] IN  (
+                #attr#
+                )
+                ) as PVTNOTAS
+                WHERE
+                [IDGRADO] = ' + @idalumno + ' 
+                AND
+                [IDBIMESTRE] = ' + @idbimestre + '
+                AND
+                [IDAREA] = ' + @idarea  + ''
+
+
+                select @attr=@attr+'['+V.[CURSO]+'],'from (    
+                SELECT
+                DISTINCT
+                C.sDescripcion		[CURSO]
+                FROM
+                dbo.Persona AS P
+                INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+                INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+                INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+                INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+                INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+                INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+                WHERE
+                G.nIdGrado = 4
+                AND
+                AC.nIdBimestre = 1
+                AND
+                A2.nIdArea = 2
+                ) as V
+
+                select @columnas=@columnas+'ROUND(['+D.[CURSO]+'],0,0) AS [' + D.[CURSO] + '],'from (    
+                SELECT
+                DISTINCT
+                C.sDescripcion		[CURSO]
+                FROM
+                dbo.Persona AS P
+                INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+                INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+                INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+                INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+                INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+                INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+                WHERE
+                G.nIdGrado = 4
+                AND
+                AC.nIdBimestre = 1
+                AND
+                A2.nIdArea = 2
+                ) as D
+
+                select @suma=@suma+'['+B.[CURSO]+']+'from (    
+                SELECT
+                DISTINCT
+                C.sDescripcion		[CURSO]
+                FROM
+                dbo.Persona AS P
+                INNER JOIN dbo.Alumno AS A ON A.nId_Persona = P.nId_Persona
+                INNER JOIN dbo.Nivel AS N ON	N.nIdNivel = A.nIdNivel
+                INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+                INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+                INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+                INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+                WHERE
+                G.nIdGrado = 4
+                AND
+                AC.nIdBimestre = 1
+                AND
+                A2.nIdArea = 2
+                ) as B
+
+                select @cantidad=B.[CANTIDAD] from (    
+                SELECT	
+                COUNT(C.CURSO) AS CANTIDAD
+                FROM
+                (SELECT
+                DISTINCT
+                C.nIdCurso	[CURSO]
+                FROM
+                dbo.Alumno AS A 
+                INNER JOIN dbo.Grado AS G ON G.nIdGrado = A.nIdGrado
+                INNER JOIN dbo.Alumno_Curso AS AC ON AC.nId_Alumno = A.nId_Alumno
+                INNER JOIN dbo.Curso AS C ON C.nIdCurso = AC.nIdCurso
+                INNER JOIN dbo.Area AS A2 ON A2.nIdArea = C.nIdArea
+                WHERE
+                G.nIdGrado = 4
+                AND
+                AC.nIdBimestre = 1
+                AND
+                A2.nIdArea = 2
+                GROUP BY C.nIdCurso) AS C
+                ) as B
+
+                set @attr=SUBSTRING(@attr,0,len(@attr))
+                set @columnas=SUBSTRING(@columnas,0,len(@columnas))
+                set @suma=SUBSTRING(@suma,0,len(@suma))
+
+                set @sql=REPLACE(@sql,'#attr#',@attr)
+                set @sql=REPLACE(@sql,'#suma#',@suma)
+                set @sql=REPLACE(@sql,'#cantidad#',@cantidad)
+                set @sql=REPLACE(@sql,'#columnas#',@columnas)
+                exec(@sql)
+            </sql:query>
+            <table border="1" style="width:100%">
+                <!-- column headers -->
+                <tr>
+                    <c:forEach var="columnName" items="#{result.columnNames}">
+                        <th style="width: 3%;background: #897B55;"><p style="writing-mode: vertical-lr;transform: rotate(180deg);height: 180px;font-size:9px;text-align: center;background: #897B55;/*font-weight: bold;*/">#{columnName}"</p></th>
+                    </c:forEach>
+                </tr>
+                <!-- column data -->
+                <c:forEach var="row" items="#{result.rowsByIndex}">
+                    <tr>
+                        <c:forEach var="column" items="#{row}">
+                            <td style="width: 5%;font-size: 9px;font-weight: bold;"><label>#{column}</label></td>
+                        </c:forEach>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </c:forEach> 
+</div>
+</ui:composition>

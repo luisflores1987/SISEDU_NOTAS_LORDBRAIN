@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotasPrimariaGrado_subreport2_subreport1" pageWidth="554976" pageHeight="85032" columnWidth="554976" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3b896bf0-b5f5-4567-9062-c63adab6138d">
+	<property name="ireport.zoom" value="1.6934217901613322"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 1}>=11]]></conditionExpression>
+			<style forecolor="#0404FF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 1}<11]]></conditionExpression>
+			<style forecolor="#FF1504">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="style2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 2}>=11]]></conditionExpression>
+			<style forecolor="#0404FF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 2}<11]]></conditionExpression>
+			<style forecolor="#FF1504">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="style3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{PROM.}>=11]]></conditionExpression>
+			<style forecolor="#0404FF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{PROM.}<11]]></conditionExpression>
+			<style forecolor="#FF1504" backcolor="#FFFFFF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="style4">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 3}>=11]]></conditionExpression>
+			<style forecolor="#0404FF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 3}<11]]></conditionExpression>
+			<style forecolor="#FF1504">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="style5">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 4}>=11]]></conditionExpression>
+			<style forecolor="#0404FF">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 4}<11]]></conditionExpression>
+			<style forecolor="#FF1504">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<parameter name="SRIDBIMESTRE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SRIDAREA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SRIDALUMNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[113]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	IDAREA,
+	CURSO,
+	CAST([1] AS INT) [NOTA 1],
+	CAST([2] AS INT) [NOTA 2],
+	CAST([3] AS INT) [NOTA 3],
+	CAST([4] AS INT) [NOTA 4],
+	CAST(ROUND((CAST([1] AS FLOAT) + CAST([2] AS FLOAT)+ CAST([3] AS FLOAT) + CAST([4] AS FLOAT))/4,0,0) AS INT) [PROM.],
+	ISNULL(CASE
+				WHEN NIDNIVEL = 1 THEN
+					CASE 
+
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) > 0
+							AND ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0)  < 11
+						THEN 'C'
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 13
+						THEN 'B'
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 21
+						THEN 'A'
+					END
+				WHEN NIDNIVEL = 2 THEN
+					CASE
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) > 0 
+						AND ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 11
+						THEN 'C'
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) > 10 
+						AND ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 13
+						THEN 'B'
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) > 12 
+						AND ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 17
+						THEN 'A'
+						WHEN ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) > 16 
+						AND ROUND((CONVERT(FLOAT, [1]) + CONVERT(FLOAT, [2]) + CONVERT(FLOAT, [3]) + CONVERT(FLOAT, [4]))/4,0,0) < 21
+						THEN 'AD'
+					END
+			END,'')	AS [LIT.]
+
+
+FROM
+
+(
+SELECT
+	TB.IDAREA,
+	TB.CURSO,
+	TB.BIMESTRE,
+	TB.NOTAS,
+	A1.nIdNivel
+FROM
+	[dbo].[fnTablaPrueba]($P{SRIDAREA}, $P{SRIDALUMNO}) TB INNER JOIN
+	ALUMNO A1 ON A1.NID_ALUMNO = TB.NIDALUMNO
+) A
+PIVOT
+(
+	MAX(A.NOTAS) FOR A.BIMESTRE IN ([1],[2],[3],[4])
+) AS PVTNOTAS]]>
+	</queryString>
+	<field name="IDAREA" class="java.lang.Integer"/>
+	<field name="CURSO" class="java.lang.String"/>
+	<field name="NOTA 1" class="java.lang.Integer"/>
+	<field name="NOTA 2" class="java.lang.Integer"/>
+	<field name="NOTA 3" class="java.lang.Integer"/>
+	<field name="NOTA 4" class="java.lang.Integer"/>
+	<field name="PROM." class="java.lang.Integer"/>
+	<field name="LIT." class="java.lang.String"/>
+	<group name="Area">
+		<groupExpression><![CDATA[$F{IDAREA}]]></groupExpression>
+	</group>
+	<detail>
+		<band height="12">
+			<textField>
+				<reportElement x="0" y="0" width="98" height="12" uuid="76caaeb1-fe47-4609-a3f2-b0155308b339"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURSO}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="98" y="0" width="16" height="12" uuid="c5f22f0c-cc89-4dcb-a9ae-ce6b4f94ad8a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="style1" positionType="Float" x="0" y="0" width="16" height="12" uuid="c24520fb-3a74-48f1-8bfb-9b154071e122"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 1}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="114" y="0" width="16" height="12" uuid="75eae65e-f557-4754-b972-a8047a64403a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="style2" x="0" y="0" width="16" height="12" uuid="105a47a1-9a78-4f3e-b6e6-1a5a976d98aa"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 2}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="130" y="0" width="16" height="12" uuid="5be024b2-382a-4f0c-af85-15084b776647"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="style4" x="0" y="0" width="16" height="12" uuid="e428fa2c-8171-437d-9bd2-4b5b1f8c8f72"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 3}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="146" y="0" width="16" height="12" uuid="1d1ba723-bfb8-4da5-ac56-81c693d555ed"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="style5" x="0" y="0" width="16" height="12" uuid="f4da5ac8-79ff-4bbd-aff9-ca4010b7b85b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 4}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="162" y="0" width="16" height="12" uuid="ec2d4d5e-5445-4226-8b7e-9e00333f79f0"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement style="style3" x="0" y="0" width="16" height="12" uuid="cb88bb20-0030-4a96-9074-d5b2adb6f345"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PROM.}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="178" y="0" width="16" height="12" uuid="2032d847-a177-41a2-8a7e-ee6f82b84f30">
+					<printWhenExpression><![CDATA[$P{SRIDBIMESTRE}.toString().equals("1") || $P{SRIDBIMESTRE}.toString().equals("2")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="16" height="12" uuid="2055d7c0-1598-40f4-813a-02dc0f86b2f3">
+						<printWhenExpression><![CDATA[$P{SRIDBIMESTRE}.toString().equals("1") || $P{SRIDBIMESTRE}.toString().equals("2")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{LIT.}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,21 @@
+#clickDerecho > ul{
+      list-style: none;
+      list-style-type: none;
+      list-style-position: outside;
+}
+ 
+#clickDerecho > ul > li{
+      line-height: 35px;
+      font-size: 12px;
+      cursor:pointer;
+      color: #fbf9ee;
+}
+ 
+#clickDerecho{
+      width:80px;
+      position:absolute;      
+      background-color: #BF120D;       
+      -moz-box-shadow: 0 0 5px #888;
+      -webkit-box-shadow: 0 0 5px#888;
+      box-shadow: 0 0 5px #888;
+}

@@ -1,0 +1,19 @@
+.entrada, .salida
+{
+    width: 60px;
+}
+
+#tblHorarioProfesor td, #HorarioProfesor p
+{
+    width: 80px
+
+}
+
+#tblHorarioProfesor
+{
+    margin-left: 46px;
+    margin-right: 10px;
+}
+
+
+

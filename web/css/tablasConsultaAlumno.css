@@ -1,0 +1,110 @@
+/*** Table Styles **/
+
+.TABLE-CONSULTAALUMNO {
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    /*height: 320px;
+    margin: auto;
+    max-width: 600px;
+    max-width: 400px;*/
+    padding:10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+ /*   table-layout: fixed;*/
+}
+
+.TABLE-CONSULTAALUMNO th {
+    color:#000000;
+    background:#7C97E8;
+    border-bottom:0px solid #000000;
+    border-right: 1px solid #000000;
+    font-size:14px;
+    font-weight: 100;
+    /*width: 1000px;*/
+    /*padding:24px;*/
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 10px;
+    overflow: hidden;   
+
+}
+
+.TABLE-CONSULTAALUMNO th:first-child {
+    border-top-left-radius:3px;
+}
+
+.TABLE-CONSULTAALUMNO th:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+}
+
+.TABLE-CONSULTAALUMNO tr {
+    border-top: 1px solid #000000;
+    border-bottom-: 1px solid #000000;
+    color:#000000;
+    font-size:10px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+.TABLE-CONSULTAALUMNO tr:hover td {
+    background: #D9E2FB;
+    color:#FFF;
+    border-top: 1px solid #22262e;
+    border-bottom: 1px solid #22262e;
+}
+
+.TABLE-CONSULTAALUMNO tr:first-child {
+    border-top:none;
+}
+
+.TABLE-CONSULTAALUMNO tr:last-child {
+    border-bottom:none;
+}
+
+
+/*.TABLE-CONSULTAALUMNO tr:nth-child(odd):hover td {
+    background:#1F0303;
+}*/
+
+.TABLE-CONSULTAALUMNO tr:last-child td:first-child {
+    border-bottom-left-radius:3px;
+}
+
+.TABLE-CONSULTAALUMNO tr:last-child td:last-child {
+    border-bottom-right-radius:3px;
+}
+
+.TABLE-CONSULTAALUMNO td {
+    background:#ffffff;
+    /*padding:20px;*/
+    vertical-align:middle;
+    font-weight:100;
+    font-size:12px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+    font-family: "Arial", serif;
+}
+
+.TABLE-CONSULTAALUMNO th.text-left {
+    text-align: center;
+}
+
+.TABLE-CONSULTAALUMNO td.text-left {
+    text-align: left;
+}
+
+.TABLE-CONSULTAALUMNO td.text-right {
+    text-align: right;
+}
+
+.TABLE-CONSULTAALUMNO th.text-right {
+    text-align: center;
+}
+
+
+

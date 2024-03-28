@@ -1,0 +1,171 @@
+#spFechaActual{
+    font-family: 'Arial', serif;
+    font-size: 20px;
+}
+
+#logoTitulo{
+    font-family: "Arial", serif; 
+    z-index: 3;
+    font-size: 20px
+}
+
+.table-titleCONSULTA h3 {
+    color: #fafafa;
+    font-size: 10px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Arial", serif;
+    /*font-family: "Roboto", helvetica, arial, sans-serif;*/
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+}
+
+.table-titleCONSULTA{
+    width: 100%;
+    margin: 0 auto;
+} 
+
+/*** Table Styles **/
+
+.table-fillCONSULTA {
+    background: white;
+    border-radius: 3px;
+    border-collapse: collapse;
+    /* padding: 10px; */
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+    /* table-layout: fixed; */
+    margin: 0 auto;
+}
+
+.table-fillCONSULTA th {
+    color:#000000;
+    background:#7C97E8;
+    border-bottom:0px solid #000000;
+    border-right: 1px solid #000000;
+    font-size:14px;
+    font-weight: 100;
+    /*width: 1000px;*/
+    /*padding:24px;*/
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+    overflow: hidden;   
+
+}
+#tdAlumno{
+
+}
+
+.table-fillCONSULTA th:first-child {
+    border-top-left-radius:3px;
+}
+
+.table-fillCONSULTA th:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+}
+
+.table-fillCONSULTA tr {
+    border-top: 1px solid #000000;
+    border-bottom-: 1px solid #000000;
+    color:#000000;
+    font-size:10px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+.table-fillCONSULTA tr:hover td {
+    background: #D9E2FB;
+}
+
+.table-fillCONSULTA tr:first-child {
+    border-top:none;
+}
+
+.table-fillCONSULTA tr:last-child {
+    border-bottom:none;
+}
+
+.table-fillCONSULTA tr:last-child td:first-child {
+    border-bottom-left-radius:3px;
+}
+
+.table-fillCONSULTA tr:last-child td:last-child {
+    border-bottom-right-radius:3px;
+}
+
+.table-fillCONSULTA td {
+    background:#FFFFFF;
+    /*padding:20px;*/
+    vertical-align:middle;
+    /*font-weight:100;*/
+    font-size:12px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+    font-family: "Arial", serif;
+    width: 60px;
+    overflow: hidden;
+}
+
+.table-fillCONSULTA th.text-left {
+    text-align: center;
+}
+
+.table-fillCONSULTA td.text-left {
+    text-align: left;
+}
+
+.table-fillCONSULTA td.text-right {
+    text-align: right;
+}
+
+.table-fillCONSULTA th.text-right {
+    text-align: center;
+}
+
+.table-fillCONSULTA > tbody{
+    height: 300px;
+    width:100%; 
+    /*    background: #2A0F0F;*/
+    /*    overflow: auto;*/
+}
+
+.table-fillCONSULTA > thead > tr{
+    width: 1500px ;
+}
+
+/*.table-fillCONSULTA > thead .table-fillCONSULTA > thead > tr, .table-fillCONSULTA > tbody{
+    display:block;
+}*/
+
+.table-fillCONSULTA td.text-left {
+    text-align: left;
+}
+
+.table-fillCONSULTA td.text-center {
+    text-align: center;
+}
+
+#botones{
+    width: 50%;
+    height: 129px;
+    float: left;
+}
+
+#content{
+    width: 50%;
+    float: left;
+
+}
+
+div#field {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.datosTablaPension {
+    margin-left: 10%;
+    display: none;
+}

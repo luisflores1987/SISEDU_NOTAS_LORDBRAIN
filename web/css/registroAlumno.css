@@ -1,0 +1,53 @@
+#divRight #divDocumentos ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+#divRight #divDocumentos li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+#contenido, #divbotonera{
+    width: 100%;
+    display: inline-table;
+}
+
+#divLeft {
+    width: 50%;
+    margin: 0 5px 0 0;
+    float:left;
+}
+
+#divRight{
+    width: 48%;
+    float:right;
+    margin: 0 0 0 5px;
+}
+
+.apoderado, .apoderadoAlterno{
+    list-style: none;
+    padding-left: 20px;
+
+}
+
+#divDocumentos{
+    padding-top: 10px;
+    height: 162px;
+}
+
+#divDocumentos fieldset{
+    height: 97%;
+}
+
+#divbotonera table tr td{
+    padding-left: 8px;
+    padding-right: 0px;
+}
+
+#divbotonera table tr td button{
+    height: 30px;
+    margin-right: 0px;
+}
+

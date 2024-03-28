@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotaFinalInicial_subreport2_subreport2" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ac86f878-e5a0-4673-ad85-bac1277d9001">
+	<property name="ireport.zoom" value="2.853116706110003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="ColorEstado">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 1}>=11]]></conditionExpression>
+			<style forecolor="#0000FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 1}<11]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<style name="ColorNota2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 2}>=11]]></conditionExpression>
+			<style forecolor="#0000FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 2}<11]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<style name="ColorNota3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 3}>=11]]></conditionExpression>
+			<style forecolor="#0000FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 3}<11]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<style name="ColorNota4">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 4}>=11]]></conditionExpression>
+			<style forecolor="#0000FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NOTA 4}<11]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<style name="ColorPromedio">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{PROM.}>=11]]></conditionExpression>
+			<style forecolor="#0000FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{PROM.}<11]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="IDALUMNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[29]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	IDALUMNO,
+	CAST([1] AS INT) [NOTA 1],
+	CAST([2] AS INT) [NOTA 2],
+	CAST([3] AS INT) [NOTA 3],
+	CAST([4] AS INT) [NOTA 4],
+	CAST(ROUND((CAST([1] AS FLOAT) + CAST([2] AS FLOAT)+ CAST([3] AS FLOAT) + CAST([4] AS FLOAT))/4,0,0) AS INT) [PROM.]
+FROM
+
+(
+SELECT
+	A.IDALUMNO,
+	A.BIMESTRE,
+	A.NOTAS	
+FROM
+	[dbo].[fnTablaPruebaComportamiento]($P{IDALUMNO}) A 
+) A
+PIVOT
+(
+	MAX(A.NOTAS) FOR A.BIMESTRE IN ([1],[2],[3],[4])
+) AS PVTNOTAS]]>
+	</queryString>
+	<field name="IDALUMNO" class="java.lang.Integer"/>
+	<field name="NOTA 1" class="java.lang.Integer"/>
+	<field name="NOTA 2" class="java.lang.Integer"/>
+	<field name="NOTA 3" class="java.lang.Integer"/>
+	<field name="NOTA 4" class="java.lang.Integer"/>
+	<field name="PROM." class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="16" height="12" uuid="64db40e0-57f5-4c44-a4be-333d01cc9221"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="ColorEstado" positionType="Float" x="0" y="0" width="16" height="12" uuid="12e8fed5-4bd1-40f6-b7b0-49422f0d2786"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 1}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="16" y="0" width="16" height="12" uuid="11d1d10f-0b80-405e-b84b-f83d98763339"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="ColorNota2" x="0" y="0" width="16" height="12" uuid="1ef6fb54-5a56-4cfb-8d4d-bdc64c0f072f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 2}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="32" y="0" width="16" height="12" uuid="2099ab74-9151-4126-9492-84086c898326"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement style="ColorNota3" x="0" y="0" width="16" height="12" uuid="5096c072-3c0f-4bcd-ba3f-beb0dfab5846"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 3}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="48" y="0" width="16" height="12" uuid="2cd394f8-5530-4ecb-917d-906a1e47d22d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement style="ColorNota4" x="0" y="0" width="16" height="12" uuid="b144c1e6-c474-4701-a527-abdd535acdc9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOTA 4}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="64" y="0" width="16" height="12" uuid="ff483be4-386a-438c-8afb-4c9ba9d40401"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement style="ColorPromedio" x="0" y="0" width="16" height="12" uuid="dbb3d0ff-e496-45c7-8369-2fce9202a2f4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PROM.}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

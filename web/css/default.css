@@ -1,0 +1,658 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    /* iniciar fondo del sistema al ingresar*/
+    /*    background: url('../images/ejemploBackground.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+    background-color: #2A578D;
+    /* finalizar fondo del sistema al ingresar*/
+    font-size: 12px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: justify;
+    color: #1F0303;
+    /*    width: 80%;*/
+}
+
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+h1 {
+    letter-spacing: -1px;
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+ul, ol {
+    margin: 0 0 1em 0;
+    text-align: justify;
+    line-height: 26px;
+    z-index: 20;
+}
+label, li, legend{
+    color: #000000;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    z-index: 3;
+}
+
+a:link {
+    color: #FFFFFF;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a:visited {
+    color: #000;
+}
+
+img {
+    border: none;
+}
+
+img.left {
+    float: left;
+    margin-right: 15px;
+}
+
+img.right {
+    float: right;
+    margin-left: 15px;
+}
+
+img:hover{
+    cursor:pointer;
+}
+
+/* Form */
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    color:#000000;
+}
+
+
+input, textarea, select {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #333333;
+}
+
+#banner {
+    width: 800px;
+    margin: 0 auto;
+    height: 230px;
+
+}
+
+/* Header */
+
+#header {
+    height: 100px;
+    /*    background: url(../images/img03.gif) no-repeat center center fixed;
+        background-size: cover;
+        position: relative;*/
+    background-color: #EEE4E4;
+    border-radius: 5px;
+}
+
+/* Menu 
+
+#menu {
+    float: left;
+    width: 800px;
+    height: 50px;
+    background: url(../images/img03.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#menu > ul {
+    margin: 0;
+    padding: 0px 0 0 10px;
+    list-style: none;
+    line-height: normal;
+}
+
+#menu > ul > li {
+    display: block;
+    float: left;
+}
+
+#menu > ul > li > a {
+    display: block;
+    float: left;
+    margin-right: 1px;
+    padding: 20px 15px 15px 15px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#menu a:hover { 
+    background: #AA330F url(../images/img04.gif) repeat-x;
+    color: #FFFFFF;
+}
+
+#menu .current_page_item a {
+    background: #AA330F url(../images/img04.gif) repeat-x;
+    color: #FFFFFF;
+    font-family: "Arial",serif;
+    text-transform: uppercase;
+}*/
+
+/** LOGO */
+
+#logo {
+    width: 90%;
+    height: 70px;
+    /*    background: url('../images/Fondologin.jpg') no-repeat center center fixed;
+        background-size: cover;*/
+    background-color: #308BFF;
+    padding: 0 0 0 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#logo h1, #logo h2 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+#logo h1 a {
+    text-decoration: none;
+    color: #FFFFFF; 
+}
+
+#logo h1 a:hover { text-decoration: underline; }
+
+#logo h2 {
+    float: left;
+    padding-left: 15px;
+    padding-top: 10px;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    color: #897B7B; 
+}
+
+#logo p a {
+    text-decoration: none;
+    color: #8BD80E;
+}
+
+#logo p a:hover { text-decoration: underline; }
+
+#logoTitulo {
+    float: left;
+    color: #000000;
+    font-family: "Arial", serif;
+    z-index: 3;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+    top: 10px;
+    position: relative;    
+}
+
+#logoTitulo p{
+
+    margin: 0 0 0 0;
+}
+
+#logoUsuario {
+    float: right;
+    width: 50%;
+    margin: auto;
+    top: 10px;
+    position: relative;    
+}
+
+.Usuario{
+    font-variant: small-caps;
+}
+
+.tipoAcceso{
+    color: #1F0303;;
+}
+
+/* Page */
+
+#page {
+    width: 90%;
+    background: #D6D5DF;
+    padding: 0 0 0 0;
+    margin: 0 auto;
+}
+
+
+.post .title {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-left: 8px solid #B8120B;
+}
+
+.post h1 {
+    padding: 0px 0 0 0px;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.post h2 {
+    padding: 0px 0 0 0px;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.post .entry {
+}
+
+.post .meta {
+    padding: 0px 15px 30px 0px;
+}
+
+.post .meta p {
+    margin: 0;
+    padding-top: 15px;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.post .meta .links {
+    float: left;
+
+}
+.post .byline {
+    border-left: 8px solid #B8120B;
+    margin-top: -20px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 10px;
+    color: #897B7B;
+}
+
+.post .meta .links {
+    float: left;
+}
+
+.post .meta .more {
+}
+
+.post .meta .comments {
+}
+
+.post .meta b {
+    display: none;
+}
+
+
+/* Sidebar */
+
+#sidebar {
+    width: 210px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar li {
+    margin-bottom: 40px;
+}
+
+#sidebar li ul {
+}
+
+#sidebar li li {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#sidebar h2 {
+    width: 250px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 8px solid #B8120B;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+/* Search */
+
+#search {
+
+}
+
+#search h2 {
+    margin-bottom: 20px;
+}
+
+#s {
+    width: 100px;
+    margin-right: 5px;
+    margin-left: 20px;
+    padding: 2px;
+}
+
+#x {
+}
+
+/* Boxes */
+
+.box1 {
+    padding: 20px;
+}
+
+.box2 {
+    color: #BABABA;
+}
+
+.box2 h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.box2 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box2 a:link, .box2 a:hover, .box2 a:active, .box2 a:visited  {
+    color: #EDEDED;
+}
+
+/* Footer */
+#footer-wrap {
+}
+
+#footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    /*    background: url(../images/img03.gif) no-repeat;
+         display: none; 
+        background-size: cover;*/
+    background-color: #308BFF;
+    border-radius: 5px;
+}
+
+html>body #footer {
+    height: auto;
+}
+
+#footer p {
+    font-size: 11px;
+}
+
+#legal {
+    clear: both;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#legal a {
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+#frmHome{
+    border-style: solid;    
+}
+
+#txtAlumno{
+    width: 356px;  
+}
+
+/* Para dar estilo a el boton buscar el dialog*/
+/* inicio */
+
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {clear:both; }
+.cf { zoom:1; }
+
+/* el formulario en si mismo */
+.formulariodemo {
+    width: 450px;
+}
+
+/* la caja donde se ingresa el texto a buscar */
+.formulariodemo input {
+    background-color: #EEE;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    float: left;
+    font-family: Tahoma;font-size:15px;font-weight: bold;
+    height: 20px;
+    padding: 10px 5px;
+    width: 330px;
+}
+.formulariodemo input:focus {
+    outline: 0;
+    background: #FFF;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+/* el estilo de del atributo placeholder debe ser declarado para cada navegador de modo separado */
+.formulariodemo input:-moz-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input:-webkit-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input:-ms-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+
+/* aquí iría el estilo de del atributo required si es que se desea definirlo */
+.formulariodemo input:required { box-shadow: none; }
+
+/* el botón de envio */
+button {
+    float: right;
+    margin:0 7px 0 0;
+    background-color:#F0F0F0;
+    border:1px solid #dedede;
+    border-top:1px solid #C3C3C3;
+    border-left:1px solid #C3C3C3;
+
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:12px;
+    line-height:130%;
+    text-decoration:none;
+    font-weight:bold;
+    color:#222222;
+    cursor:pointer;
+    padding:5px 10px 6px 7px; /* Links */
+}
+button img {
+    margin:0 3px -3px 0 !important;
+    padding:0;
+    border:none;
+    width:16px;
+    height:16px;
+    float: left;
+}
+
+#btnCancelar:hover{ 
+    background: #FA5E5E; 
+    border-top:1px solid #878787;
+    border-left:1px solid #878787;
+}
+
+#btnIngresar:hover, #btnEditar:hover{ 
+    background: #16C677; 
+    border-top:1px solid #878787;
+    border-left:1px solid #878787;
+}
+
+#btnBuscar:hover{ 
+    background: #16C677; 
+    border-top:1px solid #878787;
+    border-left:1px solid #878787;
+}
+
+/*button:active, button:focus{ background: #C42F2F; }*/
+/*button:before { el detalle del triángulo izquierdo 
+   content: "";
+   border-color: transparent #9099A1 transparent;
+   border-style: solid solid solid none;
+   border-width: 8px 8px 8px 0;
+   left: -6px;
+   position: absolute;
+   top: 12px;
+}*/
+/*button:hover:before { border-right-color: #BF120D; }
+button:focus:before { border-right-color: #BF120D; }    */
+
+/* fin */
+
+.myTitleClass .ui-dialog-titlebar {
+    background:#308BFF;
+}
+
+/* Agregar sub menus*/
+
+#menu ul > li > ul > li:hover{
+    cursor:pointer;
+}
+
+#menu ul > li > ul > li{
+    display: none;
+    position: absolute;
+    top: 49px;
+    background: #333;
+    color: #fff;
+    padding: 5px 0px 5px 5px;
+    margin: 0;
+}
+
+#menu ul > li > ul > li{
+    float: left;
+    color: #fff;
+    width:100%;
+    margin:2% 0%;
+}
+
+#menu ul > li:hover ul ul ul{
+    display: none;
+    cursor:pointer;
+}
+
+#tblDatosPersonales{    
+    width: 470px;
+}
+
+.clsEditar:hover{
+    font-size: 15px; 
+}
+
+.clsIngresar:hover{
+    font-size: 15px; 
+}
+
+.tblusuario{
+    table-layout: fixed;
+    width: 100%;
+    border-top-width: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+.tblusuario td{
+    float: right;
+    padding-right: 10px;
+}
+
+/* fin sub menus*/
+
+.clsDocumentos{
+    color: #897B55;
+    float: left;
+}
+
+legend {
+    color: #000000;
+}
+
+.formApoderado{
+    border: none;
+
+}
+#logoUsuario .tblusuario tbody tr td .tipoAcceso{
+    display: none;
+}
+.menunav {
+    width: 60%;
+    float:left;
+    height: 50px;
+    top: 25px;
+    background: url(../images/img03.gif) no-repeat center center fixed;; 
+    position: relative;
+}
+.menunav{
+
+} 
+
+.logoTipo{
+    width: 40%;
+    float: right;
+    height: 80px;
+    top: 10px;
+    position: relative;
+}
+
+.logoTipo img{
+    width: 80%;
+    height: 100%;
+    float: right;
+    padding-right: 5%;
+}
+
+#buscarAlumno{
+    /*    background: url('../images/fondoDialog.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;   */
+    background-color: #D6D5DF;
+}
+
+#page, #logo, #header{
+    width: 80%;
+    /* background: #2A0F0F; */
+    padding: 0 0 0 0;
+    /* margin: 0 auto; */
+    margin: 0 10% 0 10%;
+}
+
+.bannertext{
+    color:#FFFEFF;
+}

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteNotaFinalInicial_subreport1" pageWidth="110" pageHeight="57" columnWidth="110" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e5e84f6c-6101-48f6-81c5-821c16ee092f">
+	<property name="ireport.zoom" value="8.052550000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IdAlumno" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[24]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+	IDALUMNO		,
+	CAST(IDASISTENCIA AS VARCHAR(2)) IDASISTENCIA,
+	DESCBIMESTRE1	,
+	DESCBIMESTRE2	,
+	DESCBIMESTRE3	,
+	DESCBIMESTRE4	,
+	(
+	DESCBIMESTRE1	+
+	DESCBIMESTRE2	+
+	DESCBIMESTRE3	+
+	DESCBIMESTRE4		
+	) [TOTAL]
+FROM 
+	[fnTablaAsistencia] ($P{IdAlumno})]]>
+	</queryString>
+	<field name="IDALUMNO" class="java.lang.Integer"/>
+	<field name="IDASISTENCIA" class="java.lang.String"/>
+	<field name="DESCBIMESTRE1" class="java.lang.Integer"/>
+	<field name="DESCBIMESTRE2" class="java.lang.Integer"/>
+	<field name="DESCBIMESTRE3" class="java.lang.Integer"/>
+	<field name="DESCBIMESTRE4" class="java.lang.Integer"/>
+	<field name="TOTAL" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="111" height="15" uuid="d9076497-0483-4533-a1e1-1ac178509b0e"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Control de Asistencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="18" width="12" height="10" uuid="c7553bbc-0efb-4fa8-b2f9-311bab4416c2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="18" width="12" height="10" uuid="e6429edc-1c9d-487d-9691-27b41af6fe49"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[IV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="18" width="12" height="10" uuid="d28696bf-1bf3-4ea7-a0cc-cbd4da957cba"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[III]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="18" width="12" height="10" uuid="166859b1-7c40-4a9d-ad68-afc501994180"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[II]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="18" width="12" height="10" uuid="171511e9-3b71-4279-980a-101a348a9d71"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tot]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="9">
+			<textField>
+				<reportElement x="47" y="-1" width="12" height="9" uuid="2e754544-317a-457c-9dd4-b775f2a5c7b4"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?$F{DESCBIMESTRE1}:$F{IDASISTENCIA}.equals("2")?$F{DESCBIMESTRE1}:$F{IDASISTENCIA}.equals("3")?$F{DESCBIMESTRE1}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="-1" width="12" height="9" uuid="5030eb5f-94fb-44b2-9e95-b98d715a809b"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?$F{DESCBIMESTRE2}:$F{IDASISTENCIA}.equals("2")?$F{DESCBIMESTRE2}:$F{IDASISTENCIA}.equals("3")?$F{DESCBIMESTRE2}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="-1" width="12" height="9" uuid="fe487ee3-f219-43ea-ae08-62d980cd2e9f"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?$F{DESCBIMESTRE3}:$F{IDASISTENCIA}.equals("2")?$F{DESCBIMESTRE3}:$F{IDASISTENCIA}.equals("3")?$F{DESCBIMESTRE3}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="-1" width="12" height="9" uuid="1a8aee6a-7925-46db-bb3f-d1a89b3926ee"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?$F{DESCBIMESTRE4}:$F{IDASISTENCIA}.equals("2")?$F{DESCBIMESTRE4}:$F{IDASISTENCIA}.equals("3")?$F{DESCBIMESTRE4}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="-1" width="12" height="9" uuid="dcae2804-ea8e-44e9-974c-7f9e2fe0f16c"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?$F{TOTAL}:$F{IDASISTENCIA}.equals("2")?$F{TOTAL}:$F{IDASISTENCIA}.equals("3")?$F{TOTAL}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="47" height="9" uuid="233b2f7d-c601-4b96-9134-8366882ab2a4"/>
+				<box leftPadding="1"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{IDASISTENCIA}.equals("1")?"Tardanzas":$F{IDASISTENCIA}.equals("2")?"Inasis. Justif":$F{IDASISTENCIA}.equals("3")?"Inasis. Injustif":"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2"/>
+	</columnFooter>
+</jasperReport>

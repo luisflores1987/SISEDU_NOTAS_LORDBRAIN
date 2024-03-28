@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptTicketVentaAtencionVuelto" pageWidth="226" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="20" uuid="0a924067-7f14-4866-8a23-2e93d43e177c">
+	<property name="ireport.zoom" value="2.4200000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="288"/>
+	<parameter name="nIdAlumno" class="java.lang.String">
+		<defaultValueExpression><![CDATA["201"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sNumeroRecibo" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000619"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sIdDeuda" class="java.lang.String">
+		<defaultValueExpression><![CDATA[8]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_imagenRecibo" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\APISERVI\\imagen\\logoLordBrain.png"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_total_en_letras" class="java.lang.String"/>
+	<parameter name="p_imagenQR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\APISERVI\\imagen\\qrcode_103847970_d86848730eca5568f13cc49ed70a89f6.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     boleta.[sNumeroRecibo],
+     CONVERT(varchar(10),boleta.[dFechaCreacion],103) AS [dFechaCreacion],
+     persona.[sNombreCompleto],
+     SUBSTRING(nivel.[sDescripcion],1,3) AS Nivel,
+     grado.[sDescripcion] AS Grado,
+     deuda.[sDescripcion] + space(2) + alumno.sAñoAcademico AS [sDescripcion],
+     CAST(boleta.[sMonto] AS DECIMAL(6,2)) AS nMontoUnitario,
+     '1.00' AS nCantidad,
+     CONVERT(DECIMAL(6,2), (CONVERT(FLOAT,boleta.[sMonto])*1.00)) AS nMontoTotal,
+     0.00 AS nMora
+FROM
+     "ALUMNO" alumno INNER JOIN "PERSONA" persona ON alumno."nId_Persona" = persona."nId_persona"
+     INNER JOIN "NIVEL" nivel ON alumno."nIdNivel" = nivel."nIdNivel"
+     INNER JOIN "GRADO" grado ON alumno."nIdGrado" = grado."nIdGrado"
+     INNER JOIN "ALUMNO_DEUDA" alumno_deuda ON alumno."nId_Alumno" = alumno_deuda."nId_Alumno"
+     INNER JOIN "DEUDA" deuda ON alumno_deuda."nIdDeuda" = deuda."nIdDeuda"
+     INNER JOIN "BOLETA" boleta ON alumno_deuda."nIdAlumnoDeuda" = boleta."nIdAlumnoDeuda"
+WHERE
+	sNumeroRecibo = $P{sNumeroRecibo}
+AND
+	persona.nId_Persona = $P{nIdAlumno}
+AND
+	boleta.sEstado = 1]]>
+	</queryString>
+	<field name="sNumeroRecibo" class="java.lang.String"/>
+	<field name="dFechaCreacion" class="java.lang.String"/>
+	<field name="sNombreCompleto" class="java.lang.String"/>
+	<field name="Nivel" class="java.lang.String"/>
+	<field name="Grado" class="java.lang.String"/>
+	<field name="sDescripcion" class="java.lang.String"/>
+	<field name="nMontoUnitario" class="java.math.BigDecimal"/>
+	<field name="nCantidad" class="java.lang.String"/>
+	<field name="nMontoTotal" class="java.math.BigDecimal"/>
+	<field name="nMora" class="java.math.BigDecimal"/>
+	<variable name="PRECIO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nMontoTotal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="186" height="87" uuid="52cc36cc-9f8f-4019-9e7c-bcdf7662279b"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="17" y="3" width="151" height="58" uuid="303f9534-76b9-4cc0-8d0e-b5f97fe2f00b"/>
+					<imageExpression><![CDATA[$P{p_imagenRecibo}]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="1" y="61" width="185" height="26" uuid="0d2835b5-104e-4123-b2df-e7930b29397a"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="true" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Institución Educativa Particular "LORD BRAIN" con más de 25 años de experiencia, formando alumnos líderes y con valores.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="39">
+			<staticText>
+				<reportElement x="30" y="26" width="90" height="12" uuid="79132450-fa1c-41ba-96ce-537b94a9842f"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="26" width="31" height="12" uuid="75a084c8-ded5-4bb9-8028-e1e0cdd7aff0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[P.U.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="30" height="12" uuid="9ed98ccf-428c-4ab4-80c5-0a6a84d744a9"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="26" width="37" height="12" uuid="ac24bc9a-0992-4121-80ce-56dd11938404"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="12" width="139" height="13" uuid="3f8a3c45-8986-4586-9618-37bf5707a074"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Grado}.concat( "- ")).concat($F{Nivel})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="12" width="47" height="13" uuid="227c43ca-ffd9-4084-ba0b-e6bf7a74f832"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[GRADO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="38" width="186" height="1" uuid="6289fcc0-e56d-4926-ac8d-c3825f17bf10"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="25" width="186" height="1" uuid="708ac1b2-7d0d-42ae-9dcf-05e8d1363119"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="48" y="0" width="139" height="13" uuid="5dc0d026-e636-4fac-811a-21e8a7b23a6e"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sNombreCompleto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="47" height="13" uuid="5be4cbfa-71d7-4588-b0d1-be67a9d40cec"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[ALUMNO:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="30" y="0" width="90" height="12" uuid="d968fd49-6858-410f-a4ab-ffc27e5e1395"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sDescripcion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="121" y="0" width="31" height="12" uuid="1bb3a225-194a-4d56-8bee-062a9aef3917"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nMontoUnitario}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="30" height="12" uuid="eaf61e8d-a523-4fbf-806b-030e38e7d670"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nCantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="0" width="37" height="12" uuid="3c2ad098-3af1-4f15-99b6-ee2104963f7f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nMontoTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="164">
+			<line>
+				<reportElement x="0" y="2" width="186" height="1" uuid="aa872c13-b73a-42cc-a1da-e057a1a98f77"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="8" width="150" height="12" uuid="f77ef245-ea6a-4448-a3d4-63fd764427ed"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Sub - Total S/.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="149" width="186" height="14" uuid="1574a4e3-7abe-473d-a3ab-c76e0e15fab1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Gracias por su visita, vuelva pronto....!!]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="8" width="36" height="12" uuid="e8bd1da3-71ab-4527-a9c2-419cb4f4cc75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PRECIO_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="150" height="12" uuid="db2055b1-f1a0-45ee-8a1a-18ef4b240cdd"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Total S/.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="18" width="36" height="12" uuid="f5a3060e-64ec-48f0-b9ab-e69e507f7a5d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PRECIO_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="42" width="47" height="13" uuid="45906c47-4dea-456d-95c2-5708fbfb0c6e"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[TICKET:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="42" width="139" height="13" uuid="b48d4ab7-3ba2-4646-b8b5-ba68edc808f7"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sNumeroRecibo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="54" width="47" height="13" uuid="eaddbea2-4d27-46b2-9761-df50f58199c0"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="54" width="139" height="13" uuid="91c4749c-2f70-4862-a871-5a247ed3d5ed"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dFechaCreacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="32" width="186" height="12" uuid="e24398da-313c-4ce8-81c4-d09d41e17ee3"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Son : ".concat($P{p_total_en_letras})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="67" width="185" height="26" uuid="d6d0db3d-a089-4f3d-9bd8-045f27550300"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[Importante: Orden de pago procesado, se le enviará el comprobante electrónico a su WhatsApp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="93" width="185" height="13" uuid="d7559415-d290-4e29-a916-8cbdb19b70d5"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[VISITANOS EN: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="106" width="185" height="13" uuid="51405553-304b-40ba-a9c7-765617851b0d"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="6" isBold="false" isUnderline="false" pdfFontName="net/sf/jasperreports/fonts/dejavu/DejaVuSans.ttf"/>
+				</textElement>
+				<text><![CDATA[www.colegiolordbrain.edu.pe]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="2" y="119" width="184" height="30" uuid="a6aac1af-a120-48fe-8925-4766fb9fc208"/>
+				<imageExpression><![CDATA[$P{p_imagenQR}]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

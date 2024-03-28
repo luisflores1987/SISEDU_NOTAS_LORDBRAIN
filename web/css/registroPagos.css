@@ -1,0 +1,94 @@
+.tablePagos{
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    /*height: 320px;*/
+    margin: auto;
+    /*max-width: 600px;*/
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+
+.tablePagos th{
+    color:#000000;
+    background:#7C97E8;
+    border-bottom:4px solid #000000;
+    border-right: 1px solid #000000;
+    font-size:20px;
+    font-weight: 100;
+    /*padding:24px;*/
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+}
+
+.tablePagos tr{
+    border-top: 1px solid #000000;
+    border-bottom-: 1px solid #000000;
+    color:#000000;
+    font-size:16px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+
+}
+
+.tablePagos td {
+    background:#FFFFFF;
+    /*padding:20px;*/
+    text-align:left;
+    vertical-align:middle;
+    font-weight:300px;
+    font-size:18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+}
+
+.tablePagos tr:hover td {
+    background: #D9E2FB;
+    color:#FFFFFF;
+    border-top: 1px solid #22262e;
+    border-bottom: 1px solid #22262e;
+}
+
+.recibopagos{
+    height: 25px;
+}
+
+.reciopagos table{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    float:right;
+}
+
+#tblDatosPersonales{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#tblDatosPersonales tbody tr td{
+    font-weight: bold;
+}
+
+.otrosrecibopagos
+{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#marco{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#capaImagen{
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+.table-title {
+    width: 60%;
+    margin: 0 auto;
+}
